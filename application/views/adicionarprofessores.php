@@ -97,25 +97,31 @@
                                     <a>Adicionar</a>
                                 </li>
                                 <li>
-                                    <a>Cadastradas</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/professoresCadastrados') ?>">Cadastrados</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a><i class="fa fa-book fa-fw"></i> Matérias<span class="fa arrow"></span></a>
+                            <a><i class="fa fa-book fa-fw"></i> Cursos & Matérias<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a>Adicionar</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/adicionarcursos') ?>">Adicionar Cursos</a>
                                 </li>
                                 <li>
-                                    <a>Cadastradas</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/adicionarmaterias') ?>">Adicionar Matérias</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/PageLoad/cursoscadastrados') ?>">Cursos Cadastrados</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/PageLoad/materiascadastradas') ?>">Matérias Cadastradas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a><i class="fa fa-table fa-fw"></i> Grades</a>
+                            <a href="<?php echo base_url('index.php/PageLoad/grade') ?>"><i class="fa fa-table fa-fw"></i> Grades</a>
                         </li>
                     </ul>
                 </div>
@@ -127,7 +133,7 @@
        <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Adicionar Professor</h1>
+                    <h1 class="page-header">Adicionar Professores</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -136,115 +142,129 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" method="post">
+                                    <form role="form" method="post" action="<?php echo base_url('index.php/Professores/adicionarProfessor')?>">
                                         <div class="form-group">
-                                            <label required="">Nome Completo</label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Text Input with Placeholder</label>
-                                            <input class="form-control" placeholder="Enter text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Static Control</label>
-                                            <p class="form-control-static">email@example.com</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>File input</label>
-                                            <input type="file">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Text area</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Checkboxes</label>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 1
-                                                </label>
+                                            <label for="">Nome do Professor:</label>
+                                            <input class="form-control" required="" name="nomeprofessor"> <br>
+                                            <label>Dias Disponíveis:</label> <br>
+                                            <table class="table table-striped">
+                                              <thead>
+                                                <tr>
+                                                  <th scope="col">#</th>
+                                                  <th scope="col">Turno</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <th scope="row">Segunda</th>
+                                                    <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="1"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="2">Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="3"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">Terça</th>
+                                                  <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="4"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="5"> Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="6"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">Quarta</th>
+                                                  <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="7"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="8"> Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="9"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">Quinta</th>
+                                                  <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="10"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="11"> Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="12"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">Sexta</th>
+                                                  <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="13"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="14"> Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="15"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">Sábado</th>
+                                                  <td>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="16"> Manhã
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="17"> Tarde
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" name="dia[]" value="18"> Noite
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                              </tbody>
+                                              </table>
+                                            <div class="form-check">
+                                                <label for="">Matérias Lecionadas:</label> <br>
+                                                <?php 
+                                                if (isset($opcao_materia)) {
+                                                    echo $opcao_materia;
+                                                }
+                                                if (isset($erro_professor)) {
+                                                    echo $erro_professor;
+                                                }
+                                                if (isset($sucesso_professor)) {
+                                                    echo $sucesso_professor;
+                                                }
+                                                    
+                                                 ?>
                                             </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 2
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 3
-                                                </label>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Inline Checkboxes</label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">1
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">2
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">3
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Radio Buttons</label>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Inline Radio Buttons</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Selects</label>
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Multiple Selects</label>
-                                            <select multiple class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                        <button type="reset" class="btn btn-default">Reset Button</button>
+
+                                        <button  type="submit" class="btn btn-primary form-control">Adicionar</button>
                                     </form> <!-- AQA´SDAS´FKSODOSPDOKFPOASK -->
+                                </div>
                             </div>
                             <!-- /.row (nested) -->
                         </div>

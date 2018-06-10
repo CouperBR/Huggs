@@ -26,5 +26,40 @@ class Professores extends CI_Controller
             }
         } //FIM IF
 	}
+
+	public function adicionarProfessor()
+	{
+
+		$this->form_validation->set_rules('nomeprofessor', 'NomeProfessor', 'required');
+        $this->form_validation->set_rules('dia[]', 'Dia', 'required');
+        $this->form_validation->set_rules('materia[]', 'Materia', 'required');
+        if ($this->form_validation->run() == FALSE) 
+        {
+            $mensagem['erro_materia'] = "Erro ao adicionar";
+
+            $this->load->view('adicionarprofessores', $mensagem);
+        }
+
+        else 
+        {
+        	$this->load->model('adicionar_model');
+
+        	$boolAdicionar = $this->adicionar_model->adicionarProfessor($this->input->post('nomeprofessor'), $this->input->post('dia'), $this->input->post('materia'));
+        	if($boolAdicionar)
+        	{
+
+        		$this->load->model('professores_model');
+            $conteudo = $this->professores_model->alimentarProfessoresCadastrados();
+
+            $this->load->view('professorescadastrados.php', $conteudo);
+        	}
+
+        	else 
+        	{
+        		$mensagem['erro_professor'] = "Erro ao adicionar";
+        		$this->load->view('adicionarprofessores', $mensagem);
+        	}
+        }
+	}
 }
  ?>

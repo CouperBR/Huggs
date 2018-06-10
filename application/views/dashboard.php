@@ -97,25 +97,31 @@
                                     <a href="<?php echo base_url('index.php/PageLoad/adicionarProfessores') ?>">Adicionar</a>
                                 </li>
                                 <li>
-                                    <a>Cadastradas</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/professoresCadastrados') ?>">Cadastrados</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#Materias" data-toggle="collapse" data-target="#Materias" aria-expanded="false" aria-controls="Materias"><i class="fa fa-book fa-fw"></i> Matérias<span class="fa arrow"></span></a>
+                            <a href="#Materias" data-toggle="collapse" data-target="#Materias" aria-expanded="false" aria-controls="Materias"><i class="fa fa-book fa-fw"></i> Cursos & Matérias<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse" id="Materias">
                                 <li>
-                                    <a>Adicionar</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/adicionarcursos') ?>">Adicionar Cursos</a>
                                 </li>
                                 <li>
-                                    <a>Cadastradas</a>
+                                    <a href="<?php echo base_url('index.php/PageLoad/adicionarmaterias') ?>">Adicionar Matérias</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/PageLoad/cursoscadastrados') ?>">Cursos Cadastrados</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('index.php/PageLoad/materiascadastradas') ?>">Matérias Cadastradas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a><i class="fa fa-table fa-fw"></i> Grades</a>
+                            <a href="<?php echo base_url('index.php/PageLoad/grade') ?>"><i class="fa fa-table fa-fw"></i> Grades</a>
                         </li>
                     </ul>
                 </div>
